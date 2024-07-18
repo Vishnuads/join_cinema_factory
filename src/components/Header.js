@@ -111,14 +111,14 @@ const Header = () => {
 
 
                         <div className='cursor-pointer w-fit'>
-                            <a href="https://api.whatsapp.com/send?phone=9884683888" target="_blank" rel="noopener noreferrer" className="">
+                            {/* <ScrollLink to="contact" smooth={true} duration={500} onClick={topPage}> */}
 
-                                {/* <div>
-                                    <img src={button} className='object-cover w-40 ' alt="" />
-                                </div> */}
+                            <Link to='https://rzp.io/l/imaxwebinar' target='_blank'>
 
                                 <button className='bg-red-700 hover:scale-105 duration-300 border-2 border-white px-2 md:px-6 py-1.5 md:py-2.5 rounded-lg text-[12px] md:text-[14px] uppercase font-semibold flex items-center gap-x-2 text-white font-[Bebas Neue] md:tracking-[1px]'> Apply Now <span><CiStreamOn className=' text-[18px] md:text-[25px] text-white font-bold animate-pulse duration-1000 transition-all' /></span></button>
-                            </a>
+
+                            </Link>
+                            {/* </ScrollLink> */}
 
                         </div>
 

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 import img from '../images/cj1.png'
 import Time from '../components/Time'
 
@@ -18,13 +20,20 @@ import imax from '../images/imax.webp'
 
 import contact from '../images/contact.jpg'
 
-
+import two from '../images/4ce.png'
+import three from '../images/4dx.png'
+import four from '../images/Ice.png'
+import one from '../images/pl.png'
+import { ScrollLink } from 'react-scroll'
 
 
 const Home = () => {
+
+    function topPage() {
+        window.scroll(0, 0)
+    }
+
     return (
-
-
 
         <>
 
@@ -55,7 +64,11 @@ const Home = () => {
                                     <div className='flex items-center gap-x-1 md:gap-x-6 '>
 
                                         <div>
-                                            <p className='bg-red-700 rounded-lg px-4 py-2 md:py-3 font-semibold text-white font-[roboto] text-[12px] md:text-[16px]'>Webinar Fee: ₹999/-</p>
+                                            <Link to='https://rzp.io/l/imaxwebinar' target='_blank'>
+                                                {/* <ScrollLink to="contact" smooth={true} duration={500} onClick={topPage}> */}
+                                                <p className='bg-red-700 rounded-lg px-4 py-2 md:py-3 font-semibold text-white font-[roboto] text-[12px] md:text-[16px]'>Webinar Fee: ₹199/-</p>
+                                                {/* </ScrollLink> */}
+                                            </Link>
                                         </div>
 
                                         <div className='-mt-4'>
@@ -95,10 +108,10 @@ const Home = () => {
                             <div className='w-full  md:w-[50%]'>
 
                                 <div>
-                                    <h2 className='font-semibold text-[16px] md:text-[24px]'>CJ Rajkumar Mentor at Cinema Factory Academy and Author of 12 Books on Cinematography  </h2>
+                                    <h2 className='font-semibold text-[16px] md:text-[22px]'>CJ Rajkumar Mentor at Cinema Factory Academy and Author of 12 Books on Cinematography  </h2>
 
                                     <div>
-                                        <ul className='list-disc text-[12px] md:text-[14px] ml-4 md:ml-6 mt-4 md:mt-6 font-[roboto] space-y-2'>
+                                        <ul className='list-disc text-[12px] md:text-[14px] ml-4 md:ml-5 mt-4 md:mt-6 font-[roboto] space-y-2'>
                                             <li>Authored 12 books on cinematography technology. </li>
                                             <li>Written over 500 articles for the Southern India Cinematographers Association website. </li>
                                             <li>His films have won numerous awards at international film festivals, including the Berlin Film Festival in 2009. </li>
@@ -142,6 +155,7 @@ const Home = () => {
 
                             </div>
 
+
                             <div className=' w-full md:w-[50%] flex justify-center'>
 
                                 <div className='flex justify-center items-center w-full'>
@@ -149,7 +163,7 @@ const Home = () => {
                                 </div>
 
                             </div>
-                            
+
                         </div>
                     </div>
                 </section>
@@ -157,12 +171,12 @@ const Home = () => {
 
                 {/* ------------------- form   ------------------------ */}
 
-                <section className=' mb-10'>
+                <section className=' mb-10' id='contact'>
                     <div className='w-full mx-auto font-[poppins]'>
 
                         <div className='flex flex-col-reverse md:flex-row items-center'>
 
-                            <div className='w-full md:w-[40%] bg-blue-600 pt-2 pb-2 pr-2' >
+                            <div className='w-full md:w-[40%] bg-blue-600 md:pt-2 md:pb-2 md:pr-2' >
 
                                 <img src={contact} className='w-full' alt="" />
 
@@ -180,55 +194,62 @@ const Home = () => {
                                             </div>
 
                                             <div class="mx-auto w-full ">
-                                                <form className='flex flex-col gap-y-2'>
-                                                    <div class="mb-2 md:mb-5">
-                                                        <label for="name" class="mb-3 block  font-medium text-white text-[12px] md:text-[14px]" >
-                                                            Full Name
-                                                        </label>
-                                                        <input type="text" name="name" id="name" placeholder="Full Name"
-                                                            class="w-full rounded-md border border-[#e0e0e0] bg-white text-[12px] md:text-[14px] py-2 md:py-3 px-3 md:px-6 font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                                                    </div>
-                                                    <div class="mb-2 md:mb-5">
-                                                        <label for="email" class="mb-3 block  font-medium text-white text-[12px] md:text-[14px]">
-                                                            Email Address
-                                                        </label>
-                                                        <input type="email" name="email" id="email" placeholder="Enter your email"
-                                                            class="w-full rounded-md border border-[#e0e0e0] bg-white text-[12px] md:text-[14px] py-2 md:py-3 px-3 md:px-6 font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                                                    </div>
-                                                    <div class="mb-2 md:mb-5">
-                                                        <label for="phone" class="mb-3 block  font-medium text-white text-[12px] md:text-[14px]">
-                                                            Phone Number
-                                                        </label>
-                                                        <input type="text" name="phone" id="phone" placeholder="Enter your phone number"
-                                                            class="w-full rounded-md border border-[#e0e0e0] bg-white text-[12px] md:text-[14px] py-2 md:py-3 px-3 md:px-6 font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                                                    </div>
-                                                    <div class="mb-2 md:mb-5">
-                                                        <label for="phone" class="mb-3 block  font-medium text-white text-[12px] md:text-[14px]">
-                                                            Whatsapp Number
-                                                        </label>
-                                                        <input type="text" name="phone" id="phone" placeholder="Enter your Whatsapp Number"
-                                                            class="w-full rounded-md border border-[#e0e0e0] bg-white text-[12px] md:text-[14px] py-2 md:py-3 px-3 md:px-6 font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                                                    </div>
+
+                                                <div className='my-4 md:my-28'>
+                                                    <h3 className='text-[16px] md:text-[28px] text-center font-semibold text-white '>"Join our IMAX webinar now! Gain groundbreaking insights and elevate your expertise today."</h3>
+                                                    <p className='text-[12px] md:text-[18px] text-gray-100 text-center mt-8 md:mt-20'>The benefits of theatrical releases, and advanced formats like pLF, EPIQ, 4DX, and ICE.</p>
+                                                </div>
+
+                                                {/* <div class="mb-2 md:mb-5">
+                                                    <label for="name" class="mb-3 block  font-medium text-white text-[12px] md:text-[14px]" >
+                                                        Full Name
+                                                    </label>
+                                                    <input type="text" name="name" id="name" placeholder="Full Name"
+                                                        class="w-full rounded-md border border-[#e0e0e0] bg-white text-[12px] md:text-[14px] py-2 md:py-3 px-3 md:px-6 font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                                </div>
+                                                <div class="mb-2 md:mb-5">
+                                                    <label for="email" class="mb-3 block  font-medium text-white text-[12px] md:text-[14px]">
+                                                        Email Address
+                                                    </label>
+                                                    <input type="email" name="email" id="email" placeholder="Enter your email"
+                                                        class="w-full rounded-md border border-[#e0e0e0] bg-white text-[12px] md:text-[14px] py-2 md:py-3 px-3 md:px-6 font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                                </div>
+                                                <div class="mb-2 md:mb-5">
+                                                    <label for="phone" class="mb-3 block  font-medium text-white text-[12px] md:text-[14px]">
+                                                        Phone Number
+                                                    </label>
+                                                    <input type="text" name="phone" id="phone" placeholder="Enter your phone number"
+                                                        class="w-full rounded-md border border-[#e0e0e0] bg-white text-[12px] md:text-[14px] py-2 md:py-3 px-3 md:px-6 font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                                </div>
+                                                <div class="mb-2 md:mb-5">
+                                                    <label for="phone" class="mb-3 block  font-medium text-white text-[12px] md:text-[14px]">
+                                                        Whatsapp Number
+                                                    </label>
+                                                    <input type="text" name="phone" id="phone" placeholder="Enter your Whatsapp Number"
+                                                        class="w-full rounded-md border border-[#e0e0e0] bg-white text-[12px] md:text-[14px] py-2 md:py-3 px-3 md:px-6 font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                                </div>
 
 
 
-                                                    <div class="mb-2 md:mb-5 ">
-                                                        <label class="mb-3  block  font-semibold text-white  text-[12px] md:text-[14px]">
-                                                            Location
-                                                        </label>
+                                                <div class="mb-2 md:mb-5 ">
+                                                    <label class="mb-3  block  font-semibold text-white  text-[12px] md:text-[14px]">
+                                                        Location
+                                                    </label>
 
-                                                        <input type="text" name="phone" id="phone" placeholder="Enter your Location"
-                                                            class="w-full rounded-md border border-[#e0e0e0] bg-white text-[12px] md:text-[14px] py-2 md:py-3 px-3 md:px-6 font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                                    <input type="text" name="phone" id="phone" placeholder="Enter your Location"
+                                                        class="w-full rounded-md border border-[#e0e0e0] bg-white text-[12px] md:text-[14px] py-2 md:py-3 px-3 md:px-6 font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
 
-                                                    </div>
+                                                </div> */}
 
-                                                    <div>
+                                                <div>
+                                                    <Link to='https://rzp.io/l/imaxwebinar' target='_blank'>
                                                         <button
-                                                            class="text-[14px] md:text-[16px] flex items-center gap-x-1 md:gap-x-3 justify-center border border-white font-[roboto] hover:shadow-form w-full rounded-md bg-gray-400 py-2 md:py-3 px-4 md:px-8 text-center  font-semibold text-white outline-none">
-                                                            Pay Now <span className='font-bold text-[16px] md:text-[18px]'>₹999</span>
+                                                            class="text-[14px] md:text-[16px] flex items-center gap-x-1 md:gap-x-3 justify-center border border-white font-[roboto] hover:shadow-form w-full rounded-md bg-red-700 py-2 md:py-3 px-4 md:px-8 text-center  font-semibold text-white outline-none">
+                                                            Pay Now <span className='font-bold text-[16px] md:text-[18px]'>₹199 + GST</span>
                                                         </button>
-                                                    </div>
-                                                </form>
+                                                    </Link>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -242,16 +263,18 @@ const Home = () => {
                 </section >
 
 
+
+
                 {/* imax screen */}
 
-                <section className='pt-20 pb-20'>
-                    <div className='w-[80%] mx-auto'>
+                <section className='pt-4 md:pt-20 pb-8  md:pb-20 font-[poppins]'>
+                    <div className=' w-full px-4 md:w-[80%] mx-auto'>
 
-                        <div className='flex items-center justify-center'>
+                        <div className='flex flex-col-reverse md:flex-row  items-center justify-center gap-y-8 gap-x-28'>
 
 
 
-                            <div className='w-[50%] mx-auto'>
+                            <div className=' w-full md:w-[50%] mx-auto'>
                                 <div className='flex justify-center items-center'>
                                     <div>
                                         <img src={imax} className='w-full rounded-md shadow-md drop-shadow-md' alt="" />
@@ -260,7 +283,13 @@ const Home = () => {
                             </div>
 
 
-                            <div className='w-[50%]'>
+                            <div className='w-full md:w-[50%]'>
+
+                                <div>
+                                    <h3 className='font-semibold text-[20px] md:text-[28px] mb-4 md:mb-8'>Why learn IMAX?</h3>
+                                    <p className=' text-[12px] md:text-[14px] font-[roboto] text-gray-700 mb-1 md:mb-2'> The IMAX cinema process increases the image resolution by using a larger film frame creating a powerful and immersive audio experiences. </p>
+                                    <p className=' text-[12px] md:text-[14px] font-[roboto] text-gray-700'> Are you also interested to create a masterpiece like this?</p>
+                                </div>
 
 
 
@@ -275,13 +304,13 @@ const Home = () => {
                 {/* ------------------------------ course deatils ------------------- */}
 
                 <section>
-                    <div className='w-[80%] mx-auto  md:pt-20 pb-8 md:pb-20 font-[poppins]'>
+                    <div className='w-full px-4 md:w-[80%] mx-auto pt-1 md:pt-20 pb-8 md:pb-20 font-[poppins]'>
 
-                        <div className='flex justify-center items-center mb-8 md:mb-0'>
+                        <div className='flex justify-center items-center mb-6 md:mb-0'>
                             <h3 className='text-center font-bold text-[18px] md:text-[30px] uppercase'>Topics to Be Covered</h3>
                         </div>
 
-                        <div className='flex flex-col md:flex-row items-center mt-4 md:mt-0 gap-y-6 md:gap-y-0'>
+                        <div className='flex flex-col md:flex-row items-center mt-2 md:mt-0 gap-y-6 md:gap-y-0'>
 
                             <div className='w-full md:w-[50%] flex flex-col justify-end md:pr-10 md:border-r border-gray-900'>
 
@@ -364,7 +393,7 @@ const Home = () => {
                 </section>
 
 
-                '
+
                 <section className='pt-8 md:pt-20 pb-8 md:pb-20 bg-gray-950  font-[poppins]'>
                     <div className=' w-full px-4 md:w-[80%] mx-auto'>
 
@@ -379,8 +408,8 @@ const Home = () => {
                             <div className='grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 md:gap-x-14'>
 
                                 <div>
-                                    <div className='flex justify-center items-center mb-6'>
-                                        <img src={book} className='size-12 md:size-28 rounded-full' alt="" />
+                                    <div className='flex justify-center items-center mb-3'>
+                                        <img src={one} className=' object-cover w-16 md:w-24' alt="" />
                                     </div>
                                     <div className='flex flex-col gap-y-2'>
                                         <h3 className='text-white text-center text-[12px]'>PLF </h3>
@@ -388,8 +417,8 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className='flex justify-center items-center mb-6'>
-                                        <img src={book} className='size-12 md:size-28 rounded-full' alt="" />
+                                    <div className='flex justify-center items-center mb-3'>
+                                        <img src={two} className=' object-cover w-16 md:w-24' alt="" />
                                     </div>
                                     <div className='flex flex-col gap-y-2'>
                                         <h3 className='text-white text-center'>EPIQ</h3>
@@ -397,8 +426,8 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className='flex justify-center items-center mb-6'>
-                                        <img src={book} className='size-12 md:size-28 rounded-full' alt="" />
+                                    <div className='flex justify-center items-center mb-3'>
+                                        <img src={three} className=' object-cover w-16 md:w-24' alt="" />
                                     </div>
                                     <div className='flex flex-col gap-y-2'>
                                         <h3 className='text-white text-center'>4DX</h3>
@@ -406,15 +435,14 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className='flex justify-center items-center mb-6'>
-                                        <img src={book} className='size-12 md:size-28 rounded-full' alt="" />
+                                    <div className='flex justify-center items-center mb-3'>
+                                        <img src={four} className=' object-cover w-16 md:w-24' alt="" />
                                     </div>
                                     <div className='flex flex-col gap-y-2'>
                                         <h3 className='text-white text-center'>ICE </h3>
                                         <p className=' text-[10px] md:text-[12px] text-gray-100 text-center'>Advanced visual and sound technology for a heightened cinematic experience</p>
                                     </div>
                                 </div>
-
 
                             </div>
 
