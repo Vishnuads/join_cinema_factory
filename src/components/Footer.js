@@ -1,12 +1,12 @@
 import React from 'react'
 
-import logo from '../images/BLACK1.webp'
+import logo from '../images/cf_logo.png'
 
 const Footer = () => {
     return (
         <>
 
-            <div>
+            <div className='bg-white'>
                 <div class="text-center pt-10 pb-8 font-[poppins]">
                     <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900">
                         

@@ -5,7 +5,7 @@ const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   function calculateTimeLeft() {
-    const targetTime = moment.tz('2024-07-23 19:00:00', 'Asia/Kolkata'); // Adjust deadline date and time here
+    const targetTime = moment.tz('2024-08-10 19:00:00', 'Asia/Kolkata'); // Adjust deadline date and time here
     const now = moment();
     const diff = moment.duration(targetTime.diff(now));
     return {

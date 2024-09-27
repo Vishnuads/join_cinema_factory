@@ -10,7 +10,7 @@ import { CiStreamOn } from "react-icons/ci";
 
 
 // import logo from '../images/64.png'
-import logo from '../images/BLACK1.webp'
+import logo from '../images/cf_logo.png'
 import black from '../images/BLACK1.webp'
 
 import button from '../images/cj-01.png'
@@ -68,17 +68,17 @@ const Header = () => {
         <>
             {/* -------- second navbar ------- */}
 
-            <nav className={` w-full sticky top-0 z-30  py-6 md:py-8  pb-3 bg-gradient-to-r from-gray-200 from-30% via-[#deea66] via-90% to-[#deea66] to-90%  ${navbarBg} `}>
+            <nav className={` w-full sticky top-0 z-30  py-6 md:py-8  pb-3 bg-gradient-to-r from-gray-200 from-30% via-[#1CB9B9] via-90% to-[#1CB9B9] to-90%  ${navbarBg} `}>
                 <div className="max-w-full mx-auto font-[roboto]  ">
                     {/* Logo */}
                     <div className='flex justify-between items-center px-4 sm:px-9 w-full xl:w-[90%] mx-auto'>
 
 
                         <div className='w-fit'>
-                            <Link to='https://cinemafactory.co.in/' onClick={topPage}>
-                                <img src={logo} className='w-44 sm:w-48 md:w-80 object-cover' alt="" />
+                            {/* <Link to='https://cinemafactory.co.in/' onClick={topPage}> */}
+                                <img src={logo} className='w-36 sm:w-48 md:w-80 object-cover' alt="" />
 
-                            </Link>
+                            {/* </Link> */}
                         </div>
 
 
@@ -111,14 +111,9 @@ const Header = () => {
 
 
                         <div className='cursor-pointer w-fit'>
-                            {/* <ScrollLink to="contact" smooth={true} duration={500} onClick={topPage}> */}
-
-                            <Link to='https://rzp.io/l/imaxwebinar' target='_blank'>
-
-                                <button className='bg-red-700 hover:scale-105 duration-300 border-2 border-white px-2 md:px-6 py-1.5 md:py-2.5 rounded-lg text-[12px] md:text-[14px] uppercase font-semibold flex items-center gap-x-2 text-white font-[Bebas Neue] md:tracking-[1px]'> Apply Now <span><CiStreamOn className=' text-[18px] md:text-[25px] text-white font-bold animate-pulse duration-1000 transition-all' /></span></button>
-
-                            </Link>
-                            {/* </ScrollLink> */}
+                            <ScrollLink to="contact" smooth={true} duration={500} onClick={topPage}>
+                                <button className='bg-[#ff0000] hover:scale-105 duration-300 border md:border-2 border-white px-2 md:px-6 py-1.5 md:py-2.5 rounded-lg text-[11px] md:text-[14px] uppercase font-semibold flex items-center gap-x-1  md:gap-x-2 text-white font-[Bebas Neue] md:tracking-[1px]'> Contact Now <span><CiStreamOn className=' text-[18px] md:text-[25px] text-white font-bold animate-pulse duration-1000 transition-all' /></span></button>
+                            </ScrollLink>
 
                         </div>
 
@@ -140,10 +135,10 @@ const Header = () => {
                             >
                                 {/* Mobile Logo */}
 
-                                <Link to='https://cinemafactory.co.in/' onClick={topPage} className='w-full' >
+                                {/* <Link to='https://cinemafactory.co.in/' onClick={topPage} className='w-full' > */}
                                     <img src={black} className=' w-36 sm:w-40  pt-10  ml-10' alt="" onClick={handleNav} />
 
-                                </Link>
+                                {/* </Link> */}
 
 
 
