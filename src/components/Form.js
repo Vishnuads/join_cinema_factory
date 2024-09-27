@@ -58,7 +58,7 @@ const Form = () => {
         // Disable the submit button to prevent multiple clicks
         setIsSubmitting(true);
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwyIPKRAklCml80TYGBEFQZtTbg7PoMkCQjUw45j9qmrcC9a-4OzHqfVG_Gl7Fd4BAUog/exec'; // Replace with your actual script URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz967dmvnYbYk5ScL_2O7q869RQSt6E9PFYpzJ6JyD5BbwsPWJ6RWH8-pq3BnE5biFmtg/exec'; // Replace with your actual script URL
 
         const formDataEncoded = new URLSearchParams(formData).toString();
 
@@ -69,6 +69,7 @@ const Form = () => {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
+              
             });
 
             const result = await response.text();
@@ -105,11 +106,11 @@ const Form = () => {
                 <div className="max-w-md mx-auto overflow-hidden">
                     <div className="md:flex">
                         <div className="w-full md:px-1 py-8">
-                            <h2 className="text-center text-[18px] md:text-[30px] uppercase font-bold font-[Merienda] text-black">Join Our Team</h2>
+                            <h2 className="text-center text-[18px] md:text-[30px] uppercase font-bold font-[poppins] text-black">Apply Now</h2>
                             <form className="mt-6 md:mt-10" onSubmit={handleSubmit}>
                                 <div className='flex flex-col gap-y-6 md:flex-row items-center gap-x-3 w-full mb-6 md:mb-8'>
                                     <div className="w-full">
-                                        <label className="block text-[12px] md:text-[14px] font-semibold mb-2 text-black" htmlFor="name">Name</label>
+                                        <label className="block text-[12px] md:text-[14px] font-semibold mb-2 text-black" htmlFor="name">Name* </label>
                                         <div>
                                             <input
                                                 className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
@@ -125,7 +126,7 @@ const Form = () => {
                                     </div>
 
                                     <div className="w-full">
-                                        <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="phone">Phone Number</label>
+                                        <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="phone">Phone Number*</label>
                                         <div>
                                             <input
                                                 className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
@@ -145,7 +146,7 @@ const Form = () => {
                                 </div>
 
                                 <div className="w-full mb-6 md:mb-8">
-                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="email">Email</label>
+                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="email">Email*</label>
                                     <div>
                                         <input
                                             className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
@@ -168,10 +169,10 @@ const Form = () => {
                                             id="number"
                                             name="number"
                                             type="tel"
-                                            placeholder="Alternative Phone Number"
+                                            placeholder="Alternative Phone Number (optional)"
                                             value={formData.number}
                                             onChange={handleChange}
-                                            required
+                                            
                                         />
                                         {altPhoneError && (
                                             <p className="text-red-500 text-[12px] mt-1">{altPhoneError}</p>
@@ -187,16 +188,16 @@ const Form = () => {
                                             id="qualification"
                                             name="qualification"
                                             type="text"
-                                            placeholder="Professional Qualifications"
+                                            placeholder="Professional Qualifications (optional)"
                                             value={formData.qualification}
                                             onChange={handleChange}
-                                            required
+                                           
                                         />
                                     </div>
                                 </div>
 
                                 <div className="mb-6 md:mb-8">
-                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="course">Select a Course</label>
+                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="course">Select a Course*</label>
                                     <select
                                         className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
                                         id="course"

@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import pdfScreenplay from '../images/screenplay.pdf';
 import pdfCinematography from '../images/cinematography.pdf';
 import pdfEditing from '../images/cinematography.pdf';
-import pdfVFX from '../images/vfx.pdf';
-import pdfvirtualproduction from '../images/cinematography.pdf';
+import pdfVFX from '../images/pdf/VFX.pdf';
+import pdfstageunreal from '../images/pdf/Stage_Unreal.pdf';
+import pdfvirtualproduction from '../images/pdf/Advanced_Virtual_Production.pdf';
 import pdfacting from '../images/cinematography.pdf';
 import pdfphotography from '../images/cinematography.pdf';
 import pdfColorgrading from '../images/cinematography.pdf';
@@ -23,7 +24,8 @@ const AllCourse = () => {
       { name: 'Cinematography', downloadFunc: () => downloadPDF(pdfCinematography, 'Cinematography.pdf') },
       { name: 'Editing', downloadFunc: () => downloadPDF(pdfEditing, 'Editing.pdf') },
       { name: 'VFX', downloadFunc: () => downloadPDF(pdfVFX, 'VFX.pdf') },
-    { name: 'Virtual Production', downloadFunc: () => downloadPDF(pdfvirtualproduction, 'Virtual_Production.pdf') },
+    { name: 'Stage Unreal - Virtual Production', downloadFunc: () => downloadPDF(pdfstageunreal, 'Stage_Unreal - Virtual_Production.pdf') },
+    { name: 'Advanced Virtual Production', downloadFunc: () => downloadPDF(pdfvirtualproduction, 'Advanced_Virtual_Production.pdf') },
     { name: 'Acting', downloadFunc: () => downloadPDF(pdfacting, 'Acting.pdf') },
     { name: 'Photography', downloadFunc: () => downloadPDF(pdfphotography, 'Photography.pdf') },
     { name: 'Color Grading (DI)', downloadFunc: () => downloadPDF(pdfColorgrading, 'color_grading(DI).pdf') },

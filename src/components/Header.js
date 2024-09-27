@@ -112,7 +112,7 @@ const Header = () => {
 
                         <div className='cursor-pointer w-fit'>
                             <ScrollLink to="contact" smooth={true} duration={500} onClick={topPage}>
-                                <button className='bg-[#ff0000] hover:scale-105 duration-300 border md:border-2 border-white px-2 md:px-6 py-1.5 md:py-2.5 rounded-lg text-[11px] md:text-[14px] uppercase font-semibold flex items-center gap-x-1  md:gap-x-2 text-white font-[Bebas Neue] md:tracking-[1px]'> Contact Now <span><CiStreamOn className=' text-[18px] md:text-[25px] text-white font-bold animate-pulse duration-1000 transition-all' /></span></button>
+                                <button className='bg-[#ff0000] hover:scale-105 duration-300 border md:border-2 border-white px-2 md:px-6 py-1.5 md:py-2.5 rounded-lg text-[11px] md:text-[14px] uppercase font-semibold flex items-center gap-x-1  md:gap-x-2 text-white font-[Bebas Neue] md:tracking-[1px]'> Apply Now <span><CiStreamOn className=' text-[18px] md:text-[25px] text-white font-bold animate-pulse duration-1000 transition-all' /></span></button>
                             </ScrollLink>
 
                         </div>
