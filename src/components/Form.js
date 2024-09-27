@@ -15,6 +15,7 @@ const Form = () => {
 
     const [phoneError, setPhoneError] = useState('');
     const [altPhoneError, setAltPhoneError] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false); // To track form submission status
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -48,10 +49,14 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Prevent submission if there are validation errors
         if (phoneError || altPhoneError) {
             toast.error('Please fix the phone number errors before submitting.');
             return;
         }
+
+        // Disable the submit button to prevent multiple clicks
+        setIsSubmitting(true);
 
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwyIPKRAklCml80TYGBEFQZtTbg7PoMkCQjUw45j9qmrcC9a-4OzHqfVG_Gl7Fd4BAUog/exec'; // Replace with your actual script URL
 
@@ -87,6 +92,9 @@ const Form = () => {
         } catch (error) {
             console.error('Error submitting the form:', error);
             toast.error('Error submitting the form');
+        } finally {
+            // Re-enable the submit button after submission is complete or if there is an error
+            setIsSubmitting(false);
         }
     };
 
@@ -209,8 +217,12 @@ const Form = () => {
                                     </select>
                                 </div>
 
-                                <button className="w-full border border-gray-200 bg-gray-950 rounded-lg uppercase text-white hover:scale-105 duration-500 font-semibold text-[14px] py-2 px-4 focus:outline-none focus:shadow-outline" type="submit">
-                                    Submit
+                                <button
+                                    className={`w-full border border-gray-200 bg-gray-950 rounded-lg uppercase text-white hover:scale-105 duration-500 font-semibold text-[14px] py-2 px-4 focus:outline-none focus:shadow-outline ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                    type="submit"
+                                    disabled={isSubmitting} // Disable button when submitting
+                                >
+                                    {isSubmitting ? 'Submitting...' : 'Submit'}
                                 </button>
                             </form>
                         </div>
