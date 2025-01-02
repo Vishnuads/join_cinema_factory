@@ -1,9 +1,9 @@
 // DownloadPDF.js
 import React, { useState } from 'react';
 
-import pdfScreenplay from '../images/screenplay.pdf';
-import pdfCinematography from '../images/cinematography.pdf';
-import pdfEditing from '../images/cinematography.pdf';
+import pdfScreenplay from '../images/pdf/Direction.pdf';
+import pdfCinematography from '../images/pdf/Cinematography.pdf';
+import pdfEditing from '../images/pdf/Editing.pdf';
 import pdfVFX from '../images/pdf/VFX.pdf';
 import pdfstageunreal from '../images/pdf/Stage_Unreal.pdf';
 import pdfvirtualproduction from '../images/pdf/Advanced_Virtual_Production.pdf';
@@ -20,15 +20,15 @@ const AllCourse = () => {
 
   // Define the course list with corresponding download functions
   const courses = [
-      { name: 'Screenplay & Direction', downloadFunc: () => downloadPDF(pdfScreenplay, 'Screenplay.pdf') },
+      { name: 'Screenplay & Direction', downloadFunc: () => downloadPDF(pdfScreenplay, 'Direction & Screenplay.pdf') },
       { name: 'Cinematography', downloadFunc: () => downloadPDF(pdfCinematography, 'Cinematography.pdf') },
       { name: 'Editing', downloadFunc: () => downloadPDF(pdfEditing, 'Editing.pdf') },
       { name: 'VFX', downloadFunc: () => downloadPDF(pdfVFX, 'VFX.pdf') },
     { name: 'Stage Unreal - Virtual Production', downloadFunc: () => downloadPDF(pdfstageunreal, 'Stage_Unreal - Virtual_Production.pdf') },
     { name: 'Advanced Virtual Production', downloadFunc: () => downloadPDF(pdfvirtualproduction, 'Advanced_Virtual_Production.pdf') },
-    { name: 'Acting', downloadFunc: () => downloadPDF(pdfacting, 'Acting.pdf') },
-    { name: 'Photography', downloadFunc: () => downloadPDF(pdfphotography, 'Photography.pdf') },
-    { name: 'Color Grading (DI)', downloadFunc: () => downloadPDF(pdfColorgrading, 'color_grading(DI).pdf') },
+    // { name: 'Acting', downloadFunc: () => downloadPDF(pdfacting, 'Acting.pdf') },
+    // { name: 'Photography', downloadFunc: () => downloadPDF(pdfphotography, 'Photography.pdf') },
+    // { name: 'Color Grading (DI)', downloadFunc: () => downloadPDF(pdfColorgrading, 'color_grading(DI).pdf') },
     
   ];
 
