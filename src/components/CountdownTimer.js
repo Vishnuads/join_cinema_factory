@@ -25,24 +25,24 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="text-center">
-        <div className="mt-5 grid grid-cols-4 gap-x-1 md:gap-x-4">
-          <div className="border-2 border-white bg-gradient-to-b from-gray-700 to-gray-900 text-white p-1 md:p-3 rounded">
-            <p className="text-[12px] md:text-[22px] font-bold">{timeLeft.days}</p>
-            <p className="text-[8px] md:text-[12px]">Day{timeLeft.days !== 1 ? 's' : ''}</p>
+    <div class="flex flex-col justify-center items-center">
+      <div class="text-center">
+        <div class="mt-5 grid grid-cols-4 gap-x-1 md:gap-x-4">
+          <div class="border-2 border-white bg-gradient-to-b from-gray-700 to-gray-900 text-white p-1 md:p-3 rounded">
+            <p class="text-[12px] md:text-[22px] font-bold">{timeLeft.days}</p>
+            <p class="text-[8px] md:text-[12px]">Day{timeLeft.days !== 1 ? 's' : ''}</p>
           </div>
-          <div className="border-2 border-white bg-gradient-to-b from-gray-700 to-gray-900 text-white p-1 md:p-3 rounded">
-            <p className="text-[12px] md:text-[22px] font-bold">{timeLeft.hours}</p>
-            <p className="text-[8px] md:text-[12px]">Hour{timeLeft.hours !== 1 ? 's' : ''}</p>
+          <div class="border-2 border-white bg-gradient-to-b from-gray-700 to-gray-900 text-white p-1 md:p-3 rounded">
+            <p class="text-[12px] md:text-[22px] font-bold">{timeLeft.hours}</p>
+            <p class="text-[8px] md:text-[12px]">Hour{timeLeft.hours !== 1 ? 's' : ''}</p>
           </div>
-          <div className="border-2 border-white bg-gradient-to-b from-gray-700 to-gray-900 text-white p-1 md:p-3 rounded">
-            <p className="text-[12px] md:text-[22px] font-bold">{timeLeft.minutes}</p>
-            <p className="text-[8px] md:text-[12px]">Minute{timeLeft.minutes !== 1 ? 's' : ''}</p>
+          <div class="border-2 border-white bg-gradient-to-b from-gray-700 to-gray-900 text-white p-1 md:p-3 rounded">
+            <p class="text-[12px] md:text-[22px] font-bold">{timeLeft.minutes}</p>
+            <p class="text-[8px] md:text-[12px]">Minute{timeLeft.minutes !== 1 ? 's' : ''}</p>
           </div>
-          <div className="border-2 border-white bg-gradient-to-b from-gray-700 to-gray-900 text-white p-1 md:p-3 rounded">
-            <p className="text-[12px] md:text-[22px] font-bold">{timeLeft.seconds}</p>
-            <p className="text-[8px] md:text-[12px]">Second{timeLeft.seconds !== 1 ? 's' : ''}</p>
+          <div class="border-2 border-white bg-gradient-to-b from-gray-700 to-gray-900 text-white p-1 md:p-3 rounded">
+            <p class="text-[12px] md:text-[22px] font-bold">{timeLeft.seconds}</p>
+            <p class="text-[8px] md:text-[12px]">Second{timeLeft.seconds !== 1 ? 's' : ''}</p>
           </div>
         </div>
       </div>

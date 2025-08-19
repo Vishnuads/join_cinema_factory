@@ -58,13 +58,14 @@ const Form = () => {
         // Disable the submit button to prevent multiple clicks
         setIsSubmitting(true);
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbz967dmvnYbYk5ScL_2O7q869RQSt6E9PFYpzJ6JyD5BbwsPWJ6RWH8-pq3BnE5biFmtg/exec'; // Replace with your actual script URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxDAwW8T18Es7f3K6-M_h6Z8PkfLW9HjA62mcQuFwiYPyc2bbkHEHbzGEioFo1PBcKNnA/exec';
 
         const formDataEncoded = new URLSearchParams(formData).toString();
 
         try {
             const response = await fetch(scriptURL, {
                 method: 'POST',
+                mode: 'no-cors',
                 body: formDataEncoded,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -102,18 +103,18 @@ const Form = () => {
     return (
         <div>
             <ToastContainer />
-            <div className="container mx-auto">
-                <div className="max-w-md mx-auto overflow-hidden">
-                    <div className="md:flex">
-                        <div className="w-full md:px-1 py-8">
-                            <h2 className="text-center text-[18px] md:text-[30px] uppercase font-bold font-[poppins] text-black">Apply Now</h2>
-                            <form className="mt-6 md:mt-10" onSubmit={handleSubmit}>
-                                <div className='flex flex-col gap-y-6 md:flex-row items-center gap-x-3 w-full mb-6 md:mb-8'>
-                                    <div className="w-full">
-                                        <label className="block text-[12px] md:text-[14px] font-semibold mb-2 text-black" htmlFor="name">Name* </label>
+            <div class="container mx-auto">
+                <div class="max-w-md mx-auto overflow-hidden">
+                    <div class="md:flex">
+                        <div class="w-full md:px-1 py-8">
+                            <h2 class="text-center text-[18px] md:text-[30px] uppercase font-bold font-[poppins] text-black">Apply Now</h2>
+                            <form class="mt-6 md:mt-10" onSubmit={handleSubmit}>
+                                <div class='flex flex-col gap-y-6 md:flex-row items-center gap-x-3 w-full mb-6 md:mb-8'>
+                                    <div class="w-full">
+                                        <label class="block text-[12px] md:text-[14px] font-semibold mb-2 text-black" htmlFor="name">Name* </label>
                                         <div>
                                             <input
-                                                className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                                class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
                                                 id="name"
                                                 name="name"
                                                 type="text"
@@ -125,11 +126,11 @@ const Form = () => {
                                         </div>
                                     </div>
 
-                                    <div className="w-full">
-                                        <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="phone">Phone Number*</label>
+                                    <div class="w-full">
+                                        <label class="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="phone">Phone Number*</label>
                                         <div>
                                             <input
-                                                className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                                class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
                                                 id="phone"
                                                 name="phone"
                                                 type="tel"
@@ -139,17 +140,17 @@ const Form = () => {
                                                 required
                                             />
                                             {phoneError && (
-                                                <p className="text-red-500 text-[12px] mt-1">{phoneError}</p>
+                                                <p class="text-red-500 text-[12px] mt-1">{phoneError}</p>
                                             )}
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="w-full mb-6 md:mb-8">
-                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="email">Email*</label>
+                                <div class="w-full mb-6 md:mb-8">
+                                    <label class="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="email">Email*</label>
                                     <div>
                                         <input
-                                            className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                            class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
                                             id="email"
                                             name="email"
                                             type="email"
@@ -161,11 +162,11 @@ const Form = () => {
                                     </div>
                                 </div>
 
-                                <div className="w-full mb-6 md:mb-8">
-                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="number">Alternative Phone Number</label>
+                                <div class="w-full mb-6 md:mb-8">
+                                    <label class="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="number">Alternative Phone Number</label>
                                     <div>
                                         <input
-                                            className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                            class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
                                             id="number"
                                             name="number"
                                             type="tel"
@@ -175,16 +176,16 @@ const Form = () => {
                                             
                                         />
                                         {altPhoneError && (
-                                            <p className="text-red-500 text-[12px] mt-1">{altPhoneError}</p>
+                                            <p class="text-red-500 text-[12px] mt-1">{altPhoneError}</p>
                                         )}
                                     </div>
                                 </div>
 
-                                <div className="w-full mb-6 md:mb-8">
-                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="qualification">Professional Qualifications</label>
+                                <div class="w-full mb-6 md:mb-8">
+                                    <label class="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="qualification">Professional Qualifications</label>
                                     <div>
                                         <input
-                                            className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                            class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
                                             id="qualification"
                                             name="qualification"
                                             type="text"
@@ -196,17 +197,17 @@ const Form = () => {
                                     </div>
                                 </div>
 
-                                <div className="mb-6 md:mb-8">
-                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="course">Select a Course*</label>
+                                <div class="mb-6 md:mb-8">
+                                    <label class="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="course">Select a Course*</label>
                                     <select
-                                        className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                        class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
                                         id="course"
                                         name="course"
                                         value={formData.course}
                                         onChange={handleChange}
                                         required
                                     >
-                                        <option value="" className='text-black'>Select a Course</option>
+                                        <option value="" class='text-black'>Select a Course</option>
                                         <option value="Screenplay & Direction">Screenplay & Direction</option>
                                         <option value="Cinematography">Cinematography</option>
                                         <option value="Visual Effects">Visual Effects</option>
@@ -219,7 +220,7 @@ const Form = () => {
                                 </div>
 
                                 <button
-                                    className={`w-full border border-gray-200 bg-gray-950 rounded-lg uppercase text-white hover:scale-105 duration-500 font-semibold text-[14px] py-2 px-4 focus:outline-none focus:shadow-outline ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                    class={`w-full border border-gray-200 bg-gray-950 rounded-lg uppercase text-white hover:scale-105 duration-500 font-semibold text-[14px] py-2 px-4 focus:outline-none focus:shadow-outline ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                                     type="submit"
                                     disabled={isSubmitting} // Disable button when submitting
                                 >
