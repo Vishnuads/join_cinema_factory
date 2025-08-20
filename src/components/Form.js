@@ -4,13 +4,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Form = () => {
     const [formData, setFormData] = useState({
-        name: '',
-        phone: '',
-        email: '',
-        number: '',
-        qualification: '',
-        course: '',
-        message: ''
+        NaName: '',
+        Phone: '',
+        Email: '',
+        Number: '',
+        Qualification: '',
+        Course: '',
     });
 
     const [phoneError, setPhoneError] = useState('');
@@ -21,7 +20,7 @@ const Form = () => {
         const { name, value } = e.target;
 
         // Phone validation logic
-        if (name === 'phone') {
+        if (name === 'Phone') {
             const phoneRegex = /^[0-9]{10}$/; // Ensures 10-digit phone number
             if (!phoneRegex.test(value)) {
                 setPhoneError('Please enter a valid 10-digit phone number.');
@@ -31,7 +30,7 @@ const Form = () => {
         }
 
         // Alternative phone validation logic
-        if (name === 'number') {
+        if (name === 'Number') {
             const altPhoneRegex = /^[0-9]{10}$/; // Ensures 10-digit alternative phone number
             if (!altPhoneRegex.test(value)) {
                 setAltPhoneError('Please enter a valid 10-digit alternative phone number.');
@@ -49,45 +48,37 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Prevent submission if there are validation errors
         if (phoneError || altPhoneError) {
             toast.error('Please fix the phone number errors before submitting.');
             return;
         }
 
-        // Disable the submit button to prevent multiple clicks
         setIsSubmitting(true);
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxDAwW8T18Es7f3K6-M_h6Z8PkfLW9HjA62mcQuFwiYPyc2bbkHEHbzGEioFo1PBcKNnA/exec';
-
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwZji-DNYO5UOpiAeQ-ohlprlvMJuSaqiqJm77bj-Uk04OnPfGmfJ-Pq7-oiIxlJ80Low/exec';
         const formDataEncoded = new URLSearchParams(formData).toString();
 
         try {
             const response = await fetch(scriptURL, {
                 method: 'POST',
-                mode: 'no-cors',
                 body: formDataEncoded,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-              
             });
 
             const result = await response.text();
-            if (result.includes('Success')) {
+
+            if (result.includes('Submitted')) {
                 toast.success('Form submitted successfully!');
-
-                // Clear the form
                 setFormData({
-                    name: '',
-                    phone: '',
-                    email: '',
-                    number: '',
-                    qualification: '',
-                    course: '',
-                    message: ''
+                    Name: '',
+                    Phone: '',
+                    Email: '',
+                    Number: '',
+                    Qualification: '',
+                    Course: '',
                 });
-
             } else {
                 toast.error('Error submitting the form: ' + result);
             }
@@ -95,7 +86,6 @@ const Form = () => {
             console.error('Error submitting the form:', error);
             toast.error('Error submitting the form');
         } finally {
-            // Re-enable the submit button after submission is complete or if there is an error
             setIsSubmitting(false);
         }
     };
@@ -103,20 +93,20 @@ const Form = () => {
     return (
         <div>
             <ToastContainer />
-            <div class="container mx-auto">
-                <div class="max-w-md mx-auto overflow-hidden">
-                    <div class="md:flex">
-                        <div class="w-full md:px-1 py-8">
-                            <h2 class="text-center text-[18px] md:text-[30px] uppercase font-bold font-[poppins] text-black">Apply Now</h2>
-                            <form class="mt-6 md:mt-10" onSubmit={handleSubmit}>
-                                <div class='flex flex-col gap-y-6 md:flex-row items-center gap-x-3 w-full mb-6 md:mb-8'>
-                                    <div class="w-full">
-                                        <label class="block text-[12px] md:text-[14px] font-semibold mb-2 text-black" htmlFor="name">Name* </label>
+            <div className="container mx-auto">
+                <div className="max-w-md mx-auto overflow-hidden">
+                    <div className="md:flex">
+                        <div className="w-full md:px-1 py-8">
+                            <h2 className="text-center text-[18px] md:text-[30px] uppercase font-bold font-[poppins] text-black">Apply Now</h2>
+                            <form className="mt-6 md:mt-10" onSubmit={handleSubmit}>
+                                <div className='flex flex-col gap-y-6 md:flex-row items-center gap-x-3 w-full mb-6 md:mb-8'>
+                                    <div className="w-full">
+                                        <label className="block text-[12px] md:text-[14px] font-semibold mb-2 text-black" htmlFor="name">Name* </label>
                                         <div>
                                             <input
-                                                class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
-                                                id="name"
-                                                name="name"
+                                                className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                                id="Name"
+                                                name="Name"
                                                 type="text"
                                                 placeholder="Name"
                                                 value={formData.name}
@@ -126,13 +116,13 @@ const Form = () => {
                                         </div>
                                     </div>
 
-                                    <div class="w-full">
-                                        <label class="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="phone">Phone Number*</label>
+                                    <div className="w-full">
+                                        <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="phone">Phone Number*</label>
                                         <div>
                                             <input
-                                                class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
-                                                id="phone"
-                                                name="phone"
+                                                className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                                id="Phone"
+                                                name="Phone"
                                                 type="tel"
                                                 placeholder="Phone Number"
                                                 value={formData.phone}
@@ -140,19 +130,19 @@ const Form = () => {
                                                 required
                                             />
                                             {phoneError && (
-                                                <p class="text-red-500 text-[12px] mt-1">{phoneError}</p>
+                                                <p className="text-red-500 text-[12px] mt-1">{phoneError}</p>
                                             )}
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="w-full mb-6 md:mb-8">
-                                    <label class="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="email">Email*</label>
+                                <div className="w-full mb-6 md:mb-8">
+                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="email">Email*</label>
                                     <div>
                                         <input
-                                            class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
-                                            id="email"
-                                            name="email"
+                                            className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                            id="Email"
+                                            name="Email"
                                             type="email"
                                             placeholder="Email"
                                             value={formData.email}
@@ -162,13 +152,13 @@ const Form = () => {
                                     </div>
                                 </div>
 
-                                <div class="w-full mb-6 md:mb-8">
-                                    <label class="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="number">Alternative Phone Number</label>
+                                <div className="w-full mb-6 md:mb-8">
+                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="number">Alternative Phone Number</label>
                                     <div>
                                         <input
-                                            class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
-                                            id="number"
-                                            name="number"
+                                            className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                            id="Number"
+                                            name="Number"
                                             type="tel"
                                             placeholder="Alternative Phone Number (optional)"
                                             value={formData.number}
@@ -176,18 +166,18 @@ const Form = () => {
                                             
                                         />
                                         {altPhoneError && (
-                                            <p class="text-red-500 text-[12px] mt-1">{altPhoneError}</p>
+                                            <p className="text-red-500 text-[12px] mt-1">{altPhoneError}</p>
                                         )}
                                     </div>
                                 </div>
 
-                                <div class="w-full mb-6 md:mb-8">
-                                    <label class="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="qualification">Professional Qualifications</label>
+                                <div className="w-full mb-6 md:mb-8">
+                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="qualification">Professional Qualifications</label>
                                     <div>
                                         <input
-                                            class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
-                                            id="qualification"
-                                            name="qualification"
+                                            className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                            id="Qualification"
+                                            name="Qualification"
                                             type="text"
                                             placeholder="Professional Qualifications (optional)"
                                             value={formData.qualification}
@@ -197,17 +187,17 @@ const Form = () => {
                                     </div>
                                 </div>
 
-                                <div class="mb-6 md:mb-8">
-                                    <label class="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="course">Select a Course*</label>
+                                <div className="mb-6 md:mb-8">
+                                    <label className="block text-[12px] md:text-[14px] text-black font-semibold mb-2" htmlFor="course">Select a Course*</label>
                                     <select
-                                        class="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
-                                        id="course"
-                                        name="course"
+                                        className="bg-white shadow border border-gray-500 text-[12px] md:text-[12px] rounded-lg w-full py-3 px-3 focus:outline-none focus:shadow-outline text-black"
+                                        id="Course"
+                                        name="Course"
                                         value={formData.course}
                                         onChange={handleChange}
                                         required
                                     >
-                                        <option value="" class='text-black'>Select a Course</option>
+                                        <option value="" className='text-black'>Select a Course</option>
                                         <option value="Screenplay & Direction">Screenplay & Direction</option>
                                         <option value="Cinematography">Cinematography</option>
                                         <option value="Visual Effects">Visual Effects</option>
@@ -220,7 +210,7 @@ const Form = () => {
                                 </div>
 
                                 <button
-                                    class={`w-full border border-gray-200 bg-gray-950 rounded-lg uppercase text-white hover:scale-105 duration-500 font-semibold text-[14px] py-2 px-4 focus:outline-none focus:shadow-outline ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                    className={`w-full border border-gray-200 bg-gray-950 rounded-lg uppercase text-white hover:scale-105 duration-500 font-semibold text-[14px] py-2 px-4 focus:outline-none focus:shadow-outline ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                                     type="submit"
                                     disabled={isSubmitting} // Disable button when submitting
                                 >

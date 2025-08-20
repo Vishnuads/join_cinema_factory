@@ -15,7 +15,7 @@ const PDF = () => {
 
     return (
         <div>
-            <button onClick={downloadPDF} class="btn-download bg-[#ff0000] rounded-md  md:rounded-lg px-4 py-2 md:py-3 font-semibold text-white font-[roboto] text-[12px] md:text-[16px]">
+            <button onClick={downloadPDF} className="btn-download bg-[#ff0000] rounded-md  md:rounded-lg px-4 py-2 md:py-3 font-semibold text-white font-[roboto] text-[12px] md:text-[16px]">
                 Download Brochure
             </button>
         </div>

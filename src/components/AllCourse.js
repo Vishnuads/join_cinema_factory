@@ -37,10 +37,10 @@ const AllCourse = () => {
   };
 
   return (
-    <div class='font-[poppins]'>
+    <div className='font-[poppins]'>
       <button 
         onClick={() => setIsModalOpen(true)} 
-        class="btn-download border border-white mt-2 md:mt-0 bg-[#ff0000] rounded-md md:rounded-lg px-4 md:px-10 py-2 md:py-3 font-semibold text-white font-[roboto] text-[12px] md:text-[16px] hover:scale-105 duration-300"
+        className="btn-download border border-white mt-2 md:mt-0 bg-[#ff0000] rounded-md md:rounded-lg px-4 md:px-10 py-2 md:py-3 font-semibold text-white font-[roboto] text-[12px] md:text-[16px] hover:scale-105 duration-300"
       >
         Download Brochure
       </button>
